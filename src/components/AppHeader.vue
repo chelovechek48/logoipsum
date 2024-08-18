@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
+import SvgTemplate from '@components/SvgTemplate.vue';
+import spriteHeader from '@icons/sprite-header.svg';
 
 const route = useRoute();
 
@@ -32,9 +34,10 @@ const links = [
         <span class="w-full h-0.5 bg-white bg-opacity-30 rounded-md" />
         <span class="w-full h-0.5 bg-white bg-opacity-30 rounded-md" />
       </button>
-      <svg class="h-7" viewBox="0 0 150 28">
-        <use href="@icons/sprite-header.svg#logo" />
-      </svg>
+      <SvgTemplate
+        icon-id="logo" viewBox="0 0 150 28" :sprite="spriteHeader"
+        class="h-7"
+      />
       <nav class="navigation" ref="list">
         <ul
           class="
@@ -57,9 +60,10 @@ const links = [
         </ul>
       </nav>
       <div class="ml-auto flex items-center gap-3">
-        <svg class="text-blue-gray-300 h-6 hidden mobile:block" viewBox="0 0 20 20">
-          <use href="@icons/sprite-header.svg#user" />
-        </svg>
+        <SvgTemplate
+          icon-id="user" :sprite="spriteHeader"
+          class="text-blue-gray-300 h-6 hidden mobile:block"
+        />
         <div>
           <p class="text-white text-sm font-semibold">
             username
