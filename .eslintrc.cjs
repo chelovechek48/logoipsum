@@ -10,6 +10,10 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  rules: {
+    'linebreak-style': 'off',
+    'vue/max-attributes-per-line': 'off',
+  },
   plugins: ['import'],
   settings: {
     'import/resolver': {
@@ -19,6 +23,7 @@ module.exports = {
           ['@components', './src/components'],
           ['@views', './src/views'],
           ['@styles', './src/styles'],
+          ['@icons', './src/assets/icons'],
         ],
       },
     },
