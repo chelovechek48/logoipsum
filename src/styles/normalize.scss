@@ -15,3 +15,13 @@ a, button {
 ul, ol, summary {
   list-style: none;
 }
+
+summary::-webkit-details-marker {
+  display: none;
+}
+input[type="search"] {
+  appearance: none;
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}

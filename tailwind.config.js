@@ -5,10 +5,11 @@ module.exports = {
       fontSize: {
         small: '0.875rem',
         normal: '1rem',
+        header: '2rem',
       },
       screens: {
         mobile: '25rem',
-        tablet: '50rem',
+        tablet: '45rem',
         desktop: '80rem',
       },
       container: {
@@ -22,6 +23,7 @@ module.exports = {
         background: '#F1F1F2',
         white: '#fff',
         black: '#000',
+        indigo: '#181C32',
         blue: {
           primary: '#2884EF',
           gray: {

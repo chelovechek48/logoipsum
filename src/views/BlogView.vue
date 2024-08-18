@@ -1,5 +1,45 @@
+<script setup>
+import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import AppFilter from '@components/AppFilter.vue';
+import itemsJSON from '@json/items.json';
+
+const route = useRoute();
+const router = useRouter();
+
+const filterProperties = {
+  search: ref(route.query.search || ''),
+  category: ref(route.query.category ? route.query.category.split(',') : []),
+};
+
+const updateFilterProperties = () => {
+  router.replace({
+    query: {
+      search: filterProperties.search.value || undefined,
+      category: filterProperties.category.value.join(',') || undefined,
+    },
+  });
+};
+
+const changeFilter = (changedValue) => {
+  const entries = Object.entries(changedValue);
+  entries.forEach((el) => {
+    const key = el[0];
+    const value = el[1];
+    filterProperties[key].value = value;
+  });
+
+  updateFilterProperties();
+};
+
+</script>
+
 <template>
   <main>
-    test
+    <AppFilter
+      :properties="filterProperties"
+      :json="itemsJSON"
+      @changeFilter="changeFilter($event)"
+    />
   </main>
 </template>
