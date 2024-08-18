@@ -1,5 +1,10 @@
+<script setup>
+import AppHeader from '@components/AppHeader.vue';
+</script>
+
 <template>
   <div class="flex flex-col h-dvh">
+    <AppHeader />
     <router-view class="flex-1" />
   </div>
 </template>

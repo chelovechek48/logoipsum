@@ -15,6 +15,7 @@ export default defineConfig({
       '@components': setAlias('./src/components'),
       '@views': setAlias('./src/views'),
       '@styles': setAlias('./src/styles'),
+      '@icons': setAlias('./src/assets/icons'),
     },
   },
 });
