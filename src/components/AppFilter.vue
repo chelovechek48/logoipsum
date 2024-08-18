@@ -47,6 +47,7 @@ const categories = new Set(props.json.flatMap((item) => item.categories));
         />
         <input
           class="
+            flex-1
             text-indigo placeholder:text-blue-gray-300
             text-normal font-medium
             w-full bg-transparent focus:outline-none
