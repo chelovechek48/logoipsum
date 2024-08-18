@@ -42,7 +42,7 @@ const links = [
         <ul
           class="
             navigation__list
-            text-base font-semibold capitalize
+            text-normal font-semibold capitalize
           "
         >
           <li v-for="link in links" :key="link.id" class="flex">
@@ -65,10 +65,10 @@ const links = [
           class="text-blue-gray-300 h-6 hidden mobile:block"
         />
         <div>
-          <p class="text-white text-sm font-semibold">
+          <p class="text-white text-small font-semibold">
             username
           </p>
-          <p class="text-blue-gray-200 text-xs font-medium">
+          <p class="text-blue-gray-200 text-small font-medium">
             ma***l@mail.ru
           </p>
         </div>

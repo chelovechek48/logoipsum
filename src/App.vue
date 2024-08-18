@@ -5,7 +5,7 @@ import AppHeader from '@components/AppHeader.vue';
 <template>
   <div class="flex flex-col h-dvh">
     <AppHeader />
-    <router-view class="flex-1" />
+    <router-view class="flex-1 bg-background" />
   </div>
 </template>
 
