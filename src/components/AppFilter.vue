@@ -31,7 +31,7 @@ onMounted(() => {
   <aside class="sticky top-0 bg-white py-5" ref="filterDOM">
     <div
       class="
-        flex items-center gap-x-10 gap-y-2.5
+        flex items-center gap-x-5 tablet:gap-x-10 gap-y-2.5
         flex-wrap tablet:flex-nowrap
         container
       "
