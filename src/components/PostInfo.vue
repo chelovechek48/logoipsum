@@ -8,6 +8,18 @@ defineProps({
     required: true,
   },
 });
+
+const getCommentWord = (count) => {
+  const num = Number(count);
+  if (num === 1) {
+    return 'комментарий';
+  } if (num % 10 === 1 && num % 100 !== 11) {
+    return 'комментарий';
+  } if (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)) {
+    return 'комментария';
+  }
+  return 'комментариев';
+};
 </script>
 
 <template>
@@ -27,7 +39,7 @@ defineProps({
         icon-id="comment" :sprite="spritePost"
         class="h-4 inline-flex"
       />
-      {{ item.comments }} комментарий/ев
+      {{ `${item.comments} ${getCommentWord(item.comments)}` }}
     </div>
   </div>
 </template>
