@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AppFilter from '@components/AppFilter.vue';
 import PostsList from '@components/PostsList.vue';
+import PostModal from '@components/PostModal.vue';
 import itemsJSON from '@json/items.json';
 
 const route = useRoute();
@@ -48,6 +49,16 @@ const items = computed(() => itemsJSON.filter((item) => {
   return hasOnlyTrueKeys;
 }));
 
+const modalItem = ref(items.value[0]);
+const toggleModal = (modal) => {
+  if (modal.open) {
+    window.modalDOM.showModal();
+    modalItem.value = modal.item;
+  } else {
+    window.modalDOM.close();
+  }
+};
+
 </script>
 
 <template>
@@ -60,6 +71,12 @@ const items = computed(() => itemsJSON.filter((item) => {
     <PostsList
       :items="items"
       @changeFilter="changeFilter($event)"
+      @toggleModal="toggleModal($event)"
+    />
+    <PostModal
+      id="modalDOM"
+      :item="modalItem"
+      @toggleModal="toggleModal($event)"
     />
   </main>
 </template>

@@ -1,7 +1,7 @@
 <script setup>
 import SvgTemplate from '@components/SvgTemplate.vue';
 
-const emit = defineEmits(['changeFilter']);
+const emit = defineEmits(['changeFilter', 'toggleModal']);
 defineProps({
   items: {
     type: Array,
@@ -15,10 +15,14 @@ defineProps({
   <section class="container bg-white my-5 p-5 rounded-xl">
     <ul v-if="items.length" class="list">
       <li
+        class="flex flex-col gap-2.5"
         v-for="item in items"
         :key="item"
       >
-        <button style="aspect-ratio: 400 / 250">
+        <button
+          style="aspect-ratio: 400 / 250"
+          @click="emit('toggleModal', { open: true, item: item })"
+        >
           <img
             class="rounded-xl object-cover object-center"
             src="@images/image.jpg"
@@ -91,12 +95,6 @@ defineProps({
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 40px 20px;
-
-  li {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 
   img {
     aspect-ratio: 400 / 250;
