@@ -1,5 +1,6 @@
 <script setup>
 import SvgTemplate from '@components/SvgTemplate.vue';
+import PostInfo from '@components/PostInfo.vue';
 
 const emit = defineEmits(['toggleModal']);
 defineProps({
@@ -40,17 +41,7 @@ defineProps({
               />
             </button>
           </header>
-          <div class="flex gap-2.5 text-small text-blue-gray-400 font-medium">
-            <div>
-              {{ item.date }}
-            </div>
-            <div>
-              {{ item.time }}
-            </div>
-            <div>
-              {{ item.comments }} комментарий/ев
-            </div>
-          </div>
+          <PostInfo :item="item" />
           <img
             class="rounded-xl object-cover object-center"
             src="@images/image.jpg"

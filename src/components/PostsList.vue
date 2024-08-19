@@ -1,5 +1,6 @@
 <script setup>
 import SvgTemplate from '@components/SvgTemplate.vue';
+import PostInfo from '@components/PostInfo.vue';
 
 const emit = defineEmits(['changeFilter', 'toggleModal']);
 defineProps({
@@ -29,17 +30,7 @@ defineProps({
             alt=""
           >
         </button>
-        <div class="flex gap-2.5 text-small text-blue-gray-400 font-medium">
-          <div>
-            {{ item.date }}
-          </div>
-          <div>
-            {{ item.time }}
-          </div>
-          <div>
-            {{ item.comments }} комментарий/ев
-          </div>
-        </div>
+        <PostInfo :item="item" />
         <header class="text-large font-semibold">
           {{ item.title }}
         </header>
