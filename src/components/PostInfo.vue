@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex gap-2.5 text-small text-blue-gray-400 font-medium">
+  <div class="flex gap-3 text-small text-blue-gray-400 font-medium">
     <div>
       {{ item.date }}
     </div>
