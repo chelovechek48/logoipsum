@@ -51,7 +51,6 @@ const items = computed(() => itemsJSON.filter((item) => {
 
 const modalItem = ref(items.value[0]);
 const toggleModal = (modal) => {
-  console.log(modal);
   if (modal.open) {
     window.modalDOM.showModal();
     modalItem.value = modal.item;
