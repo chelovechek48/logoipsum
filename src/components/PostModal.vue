@@ -14,17 +14,17 @@ defineProps({
 
 <template>
   <dialog>
-    <section
+    <div
       class="
         fixed top-0 left-0 w-full h-full
         flex flex-col items-center justify-start bg-black bg-opacity-50 overflow-y-auto
       "
     >
-      <article class="flex items-center flex-1">
+      <div class="flex items-center justify-center flex-1 w-full p-3">
         <div
           class="
           flex flex-col gap-2.5
-          bg-white rounded-xl p-3 m-3
+          bg-white rounded-xl p-3 m-3 max-w-[35rem] w-full
         "
         >
           <header class="flex items-center justify-between">
@@ -48,7 +48,7 @@ defineProps({
             alt=""
           >
           <p class="text-normal">
-            {{ item.description }}
+            {{ item.description.full }}
           </p>
           <ul class="flex gap-2.5 text-sm">
             <li
@@ -66,8 +66,8 @@ defineProps({
             </li>
           </ul>
         </div>
-      </article>
-    </section>
+      </div>
+    </div>
   </dialog>
 </template>
 

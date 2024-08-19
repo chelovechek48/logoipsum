@@ -35,7 +35,7 @@ defineProps({
           {{ item.title }}
         </header>
         <p class="text-normal">
-          {{ item.description }}
+          {{ item.description.short }}
         </p>
         <ul class="flex gap-2.5 text-sm">
           <li
