@@ -1,6 +1,7 @@
 <script setup>
 import SvgTemplate from '@components/SvgTemplate.vue';
 import PostInfo from '@components/PostInfo.vue';
+import ImgTemplate from '@components/ImgTemplate.vue';
 
 const emit = defineEmits(['toggleModal']);
 defineProps({
@@ -20,7 +21,7 @@ defineProps({
         flex flex-col items-center justify-start bg-black bg-opacity-50 overflow-y-auto
       "
     >
-      <div class="flex items-center justify-center flex-1 w-full p-3">
+      <div class="show flex items-center justify-center flex-1 w-full p-3">
         <div
           class="
           flex flex-col gap-2.5
@@ -42,11 +43,10 @@ defineProps({
             </button>
           </header>
           <PostInfo :item="item" />
-          <img
-            class="rounded-xl object-cover object-center"
-            src="@images/image.jpg"
-            alt=""
-          >
+          <ImgTemplate
+            class=" rounded-xl object-cover object-center"
+            :src="item.image"
+          />
           <p class="text-normal">
             {{ item.description.full }}
           </p>
@@ -72,5 +72,16 @@ defineProps({
 </template>
 
 <style lang="scss" scoped>
+.show {
+  @keyframes show {
+    0% {
+      translate: 0 -100%;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
 
+  animation: show 750ms ease;
+}
 </style>
