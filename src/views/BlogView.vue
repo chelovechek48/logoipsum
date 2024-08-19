@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AppFilter from '@components/AppFilter.vue';
-import ImagesList from '@components/ImagesList.vue';
+import PostsList from '@components/PostsList.vue';
 import itemsJSON from '@json/items.json';
 
 const route = useRoute();
@@ -57,7 +57,7 @@ const items = computed(() => itemsJSON.filter((item) => {
       :json="itemsJSON"
       @changeFilter="changeFilter($event)"
     />
-    <ImagesList
+    <PostsList
       :items="items"
       @changeFilter="changeFilter($event)"
     />
