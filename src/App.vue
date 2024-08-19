@@ -11,4 +11,8 @@ import AppHeader from '@components/AppHeader.vue';
 
 <style lang="scss">
 @import '@styles';
+
+html {
+  scrollbar-gutter: stable;
+}
 </style>

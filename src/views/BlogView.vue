@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AppFilter from '@components/AppFilter.vue';
+import ImagesList from '@components/ImagesList.vue';
 import itemsJSON from '@json/items.json';
 
 const route = useRoute();
@@ -32,6 +33,21 @@ const changeFilter = (changedValue) => {
   updateFilterProperties();
 };
 
+const items = computed(() => itemsJSON.filter((item) => {
+  const selectedCategories = filterProperties.category.value;
+
+  const filterCategories = () => item.categories
+    .some((category) => selectedCategories.includes(category));
+
+  const filterKeys = {
+    category: selectedCategories.length ? filterCategories() : true,
+    search: item.title.toLowerCase().includes(filterProperties.search.value.toLowerCase()),
+  };
+
+  const hasOnlyTrueKeys = Object.values(filterKeys).every((value) => value);
+  return hasOnlyTrueKeys;
+}));
+
 </script>
 
 <template>
@@ -39,6 +55,10 @@ const changeFilter = (changedValue) => {
     <AppFilter
       :properties="filterProperties"
       :json="itemsJSON"
+      @changeFilter="changeFilter($event)"
+    />
+    <ImagesList
+      :items="items"
       @changeFilter="changeFilter($event)"
     />
   </main>

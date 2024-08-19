@@ -5,6 +5,7 @@ module.exports = {
       fontSize: {
         small: '0.875rem',
         normal: '1rem',
+        large: '1.375rem',
         header: '2rem',
       },
       screens: {
