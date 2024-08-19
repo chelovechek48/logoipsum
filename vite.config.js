@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': setAlias('./src'),
+      '@js': setAlias('./src/js'),
       '@components': setAlias('./src/components'),
       '@views': setAlias('./src/views'),
       '@styles': setAlias('./src/styles'),

@@ -1,6 +1,8 @@
+<!-- eslint-disable no-new -->
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import SvgTemplate from '@components/SvgTemplate.vue';
+import Accordion from '@js/accordion';
 
 const emit = defineEmits(['changeFilter']);
 const props = defineProps({
@@ -17,10 +19,16 @@ const props = defineProps({
 const selectedCategories = ref(props.properties.category);
 const categories = new Set(props.json.flatMap((item) => item.categories));
 
+const accordionDOM = ref(null);
+const filterDOM = ref(null);
+onMounted(() => {
+  new Accordion(accordionDOM.value, filterDOM.value);
+});
+
 </script>
 
 <template>
-  <aside class="sticky top-0 bg-white py-5">
+  <aside class="sticky top-0 bg-white py-5" ref="filterDOM">
     <div
       class="
         flex items-center gap-x-10 gap-y-2.5
@@ -76,17 +84,17 @@ const categories = new Set(props.json.flatMap((item) => item.categories));
         >
           очистить
         </button>
-        <details class="text-blue-gray-300">
+        <details class="text-blue-gray-300" ref="accordionDOM">
           <summary
             class="flex items-center gap-2.5 cursor-pointer capitalize"
           >
             фильтр
             <SvgTemplate
               icon-id="arrow"
-              class="w-3 h-3"
+              class="w-3 h-3 details-icon"
             />
           </summary>
-          <div class="absolute top-full left-0 w-full bg-white overflow-hidden">
+          <aside class="absolute top-full left-0 w-full bg-white overflow-hidden">
             <ul class="flex gap-5 py-5 overflow-x-auto container">
               <li
                 v-for="category in categories"
@@ -124,7 +132,7 @@ const categories = new Set(props.json.flatMap((item) => item.categories));
                 </label>
               </li>
             </ul>
-          </div>
+          </aside>
         </details>
       </div>
     </div>
@@ -132,6 +140,12 @@ const categories = new Set(props.json.flatMap((item) => item.categories));
 </template>
 
 <style lang="scss" scoped>
+.details-icon {
+  transition: rotate 300ms ease;
+}
+details[open] .details-icon {
+  rotate: 180deg;
+}
 
 input[type="checkbox"]:checked + label {
   & .icon {
