@@ -44,7 +44,7 @@ defineProps({
           </header>
           <PostInfo :item="item" />
           <ImgTemplate
-            class=" rounded-xl object-cover object-center"
+            class=" rounded-xl overflow-hidden object-cover object-center"
             :src="item.image"
           />
           <p class="text-normal">
