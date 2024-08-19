@@ -9,7 +9,8 @@
       "image/avif": {
         "2x": "mountain@2x.avif",
         "1x": "mountain@1x.avif"
-      }
+      },
+      "alt": "Человек стоит на фоне горы"
     },
     "categories": [
       "Природа", "Люди"
@@ -28,7 +29,8 @@
       "image/avif": {
         "2x": "koala@2x.avif",
         "1x": "koala@1x.avif"
-      }
+      },
+      "alt": "Коала сидит на дереве"
     },
     "categories": [
       "Природа", "Животные"
@@ -47,7 +49,8 @@
       "image/avif": {
         "2x": "forest@2x.avif",
         "1x": "forest@1x.avif"
-      }
+      },
+      "alt": "Картина леса"
     },
     "categories": [
       "Природа", "Искусство"
@@ -66,7 +69,8 @@
       "image/avif": {
         "2x": "monkey@2x.avif",
         "1x": "monkey@1x.avif"
-      }
+      },
+      "alt": "Обезбяны на фоне водопада"
     },
     "categories": [
       "Природа", "Животные"
@@ -85,7 +89,8 @@
       "image/avif": {
         "2x": "landscape@2x.avif",
         "1x": "landscape@1x.avif"
-      }
+      },
+      "alt": "Пейзаж: тонкие деревья рядом с берегом моря"
     },
     "categories": [
       "Природа", "Искусство"
@@ -104,7 +109,8 @@
       "image/avif": {
         "2x": "canyon@2x.avif",
         "1x": "canyon@1x.avif"
-      }
+      },
+      "alt": "Человек с собакой сидят на краю каньёна"
     },
     "categories": [
       "Природа", "Люди", "Животные"

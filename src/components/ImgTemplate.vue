@@ -38,11 +38,7 @@ const imageTypesArray = Object.entries(props.src)
       :type="imageType"
       :srcset="getSrcset(imageType)"
     >
-    <img
-      src=""
-      :alt="props.src.alt"
-      loading="lazy"
-    >
+    <img :alt="props.src.alt" loading="lazy">
   </picture>
 </template>
 
