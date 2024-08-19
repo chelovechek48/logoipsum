@@ -23,7 +23,7 @@ const getCommentWord = (count) => {
 </script>
 
 <template>
-  <div class="flex gap-3 text-small text-blue-gray-400 font-medium">
+  <div class="flex flex-wrap gap-y-1 gap-x-3 text-small text-blue-gray-400 font-medium">
     <div>
       {{ item.date }}
     </div>
