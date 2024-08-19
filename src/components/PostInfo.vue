@@ -39,7 +39,7 @@ const getCommentWord = (count) => {
         icon-id="comment" :sprite="spritePost"
         class="h-4 inline-flex"
       />
-      {{ `${item.comments} ${getCommentWord(item.comments)}` }}
+      {{ `${item.comments.length} ${getCommentWord(item.comments.length)}` }}
     </div>
   </div>
 </template>

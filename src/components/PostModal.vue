@@ -65,6 +65,30 @@ defineProps({
               {{ category }}
             </li>
           </ul>
+          <footer class="flex flex-col gap-y-2.5">
+            <span class="text-normal font-semibold">Комментариев: {{ item.comments.length }}</span>
+            <ul class="flex flex-col gap-y-2.5">
+              <li
+                v-for="comment in item.comments" :key="comment"
+                class="flex items-start gap-x-4"
+              >
+                <div class="w-9">
+                  <ImgTemplate :src="comment.image" />
+                </div>
+                <div>
+                  <header class="text-indigo text-normal font-semibold">
+                    {{ comment.name }}
+                  </header>
+                  <p class="text-indigo text-small py-0.5">
+                    {{ comment.text }}
+                  </p>
+                  <time class="text-blue-gray-400 text-small" datetime="">
+                    {{ comment.date }}
+                  </time>
+                </div>
+              </li>
+            </ul>
+          </footer>
         </div>
       </div>
     </div>
