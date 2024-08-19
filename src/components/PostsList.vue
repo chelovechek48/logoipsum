@@ -87,7 +87,7 @@ defineProps({
 <style lang="scss" scoped>
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
   gap: 40px 20px;
 
   img {
